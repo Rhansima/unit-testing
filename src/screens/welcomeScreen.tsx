@@ -6,6 +6,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../navigation/AppNavigator';
 
 // In your navigation setup file (e.g., AppNavigator.tsx)
+//sahan
 
 
 const WelcomeScreen = () => {
