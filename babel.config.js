@@ -1,33 +1,12 @@
 module.exports = {
   presets: [
-    'babel-preset-expo', // Expo preset
-    '@babel/preset-react', // React preset
-    '@babel/preset-typescript', // TypeScript preset
-    'module:metro-react-native-babel-preset', // Metro React Native preset
-    '@babel/preset-env', // Modern JS preset
-  ],
-  plugins: [
-    // Ensure loose mode is set to the same value across the relevant plugins
-    [
-      '@babel/plugin-transform-class-properties', 
-      { loose: true }
-    ],
-    [
-      '@babel/plugin-transform-private-methods', 
-      { loose: true }
-    ],
-    [
-      '@babel/plugin-transform-private-property-in-object', 
-      { loose: true }
-    ],
+    'babel-preset-expo', // For React Native with Expo (if using Expo)
+    'module:metro-react-native-babel-preset', // Essential for React Native apps
+    '@babel/preset-react',
   ],
   env: {
     test: {
-      presets: [
-        'module:metro-react-native-babel-preset',
-        '@babel/preset-env',
-      ],
-      plugins: [],
+      plugins: ['metro-react-native-babel-preset'], // Include the plugin in test environment
     },
   },
 };
