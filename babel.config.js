@@ -1,14 +1,14 @@
 module.exports = {
   presets: [
-    'babel-preset-expo',
-    '@babel/preset-react',
-    '@babel/preset-typescript',
-    'module:metro-react-native-babel-preset',
-    "@babel/preset-env",
+    [
+      "@babel/preset-env",
+      {
+        "loose": false // Set this to 'true' if you want to enable loose mode for all plugins
+      }
+    ]
   ],
-  env: {
-    test: {
-      plugins: ['metro-react-native-babel-preset']
-    }
-  }
+  plugins: [
+    ["@babel/plugin-transform-private-methods", { "loose": true }],
+    ["@babel/plugin-transform-private-property-in-object", { "loose": true }]
+  ]
 };
